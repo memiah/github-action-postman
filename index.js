@@ -26,6 +26,10 @@ try {
           var body = Buffer.concat(chunks);
           if (res.statusCode == 200) {
             console.log(body.toString());
+            const status = JSON.parse(body.toString()).run.info.status;
+            if (status == 'failed') {
+                core.setFailed(`1 or more tests failed`);
+            }
           } else {
             core.setFailed(`Failed. Error code ${res.statusCode}`);
             console.error(body.toString());
