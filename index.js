@@ -5,14 +5,12 @@ const https = require('follow-redirects').https;
 //const fs = require('fs');
 
 try {
-    console.log(core.getInput('POSTMANAPIKEY'));
-
     var options = {
         'method': 'POST',
         'hostname': 'api.getpostman.com',
         'path': '/monitors/1eab6268-40dc-4990-b999-5699b299ad7c/run',
         'headers': {
-          'X-Api-Key': ''
+          'X-Api-Key': process.env.POSTMANAPIKEY
         },
         'maxRedirects': 20
       };

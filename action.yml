@@ -1,11 +1,5 @@
 name: 'Postman Action'
 description: 'Call Postman monitor'
-inputs:
-  POSTMANAPIKEY: 
-    description: 'API Key for Postman'
-    required: true
-    default: ''
-    
 runs:
   using: 'node12'
   main: 'index.js'
