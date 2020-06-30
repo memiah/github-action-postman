@@ -5,10 +5,17 @@ const https = require('follow-redirects').https;
 //const fs = require('fs');
 
 try {
-    var options = {
+
+    const paths = [
+      '/monitors/1eab6268-40dc-4990-b999-5699b299ad7c/run',
+      '/monitors/1eab622b-8892-4380-a1ab-29ec3b9b77b1/run'
+    ];
+
+    paths.forEach(path => {
+      var options = {
         'method': 'POST',
         'hostname': 'api.getpostman.com',
-        'path': '/monitors/1eab6268-40dc-4990-b999-5699b299ad7c/run',
+        'path': path,
         'headers': {
           'X-Api-Key': process.env.POSTMANAPIKEY
         },
@@ -40,8 +47,9 @@ try {
           console.error(error);
         });
       });
-      
       req.end();
+    });
+    
 } catch (error) {
   core.setFailed(error.message);
 }
