@@ -2,13 +2,14 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const https = require('follow-redirects').https;
 
-try {
 
-    const monitors = [
-      {type: 'postman', id: '1eab6268-40dc-4990-b999-5699b299ad7c'},
-      {type: 'postman', id: '1eab622b-8892-4380-a1ab-29ec3b9b77b1'},
-      {type: 'ghostinspector', id: '1eabb9c1-ab87-4550-a170-0b15251a3ba6'}
-    ];
+const fs = require('fs');
+
+
+try {
+    let rawdata = fs.readFileSync('/github/workspace/postman-action-config.json');
+
+    const monitors =  JSON.parse(rawdata);
 
     monitors.forEach(m => {
       var options = {
