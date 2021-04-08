@@ -5,6 +5,9 @@ const https = require('follow-redirects').https;
 
 const fs = require('fs');
 
+fs.readdirSync('./').forEach(file => {
+  console.log(file);
+});
 
 try {
     let rawdata = fs.readFileSync('/github/workspace/postman-action-config.json');
