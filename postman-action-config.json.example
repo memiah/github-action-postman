@@ -1,10 +1,10 @@
 [
     {
         "type": "postman", 
-        "id": '12345-1ab4-1ab4-1234-1234abc89'
+        "id": "12345-1ab4-1ab4-1234-1234abc89"
     },
     {
         "type": "ghostinspector", 
-        "id": '54321-1xy4-1xy4-1234-1234abc89'
+        "id": "54321-1xy4-1xy4-1234-1234abc89"
     }
 ]
